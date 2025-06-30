@@ -7,3 +7,13 @@ requirements to make the period maximum:
  1.3 If M is a multiple of 4, so is A-1;
  1.4 A, B, N[0] ARE SMALLER THAN M
  
+
+
+
+
+设计思路：写入信号
+-> 数据拆分成4字节
+-> 每字节XOR加密
+-> 地址混淆
+-> 存入memory
+-> 计算并存储parity
