@@ -10,10 +10,8 @@ requirements to make the period maximum:
 
 
 
-
-设计思路：写入信号
--> 数据拆分成4字节
--> 每字节XOR加密
--> 地址混淆
--> 存入memory
--> 计算并存储parity
+1、加密模块的设计思路采用假设一直八位密钥和待加密数据，分字节按位进行xor操作，最后拼接
+（按位进行xor是由systemC的“^”操作是按照按位XOR设计的 ）
+2、地址加扰模块的设计思路是基于一个公式（scrambled_addr = logic_addr ^ scramble_key）
+3、奇偶校验模块的实际思路是将32位地址按位xor最后得到一个奇偶校验位输出
+xor_reduce()方法来自GPT，xor_reduce() 是 SystemC 提供的内建方法，用于 sc_bv<>、sc_lv<>、sc_uint<>、sc_int<> 等类型的按位归约操作。
