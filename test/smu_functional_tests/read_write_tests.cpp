@@ -52,11 +52,10 @@ int main() {
             reqs
     );
 
-    // 3. 打印仿真统计结果
+
     std::cout << "Testbench Simulation completed.\n";
     std::cout << "Cycles: " << result.cycles << std::endl;
     std::cout << "Errors: " << result.errors << std::endl;
 
-    // 4. 你可以根据输出，判断结果是否如预期
     return 0;
 }
