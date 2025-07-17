@@ -1,0 +1,27 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     module
+relocations:
+  - { offset: 0x19, size: 0x8, addend: 0x0, symName: _print_usage, symObjAddr: 0x0, symBinAddr: 0x1000061B8, symSize: 0x4C }
+  - { offset: 0x5AB, size: 0x8, addend: 0x0, symName: _usage_msg, symObjAddr: 0x1A28, symBinAddr: 0x10000C098, symSize: 0x0 }
+  - { offset: 0x5C1, size: 0x8, addend: 0x0, symName: _help_msg, symObjAddr: 0x1A30, symBinAddr: 0x10000C0A0, symSize: 0x0 }
+  - { offset: 0x5D6, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xE64, symBinAddr: 0x10000701C, symSize: 0x334 }
+  - { offset: 0x617, size: 0x8, addend: 0x0, symName: _cycles.7, symObjAddr: 0x1B58, symBinAddr: 0x10000C1C8, symSize: 0x0 }
+  - { offset: 0x62E, size: 0x8, addend: 0x0, symName: _tracefile.6, symObjAddr: 0x43E8, symBinAddr: 0x10000C1D0, symSize: 0x0 }
+  - { offset: 0x645, size: 0x8, addend: 0x0, symName: _input_file.5, symObjAddr: 0x43F0, symBinAddr: 0x10000C1D8, symSize: 0x0 }
+  - { offset: 0x65C, size: 0x8, addend: 0x0, symName: _endianness.4, symObjAddr: 0x43F8, symBinAddr: 0x10000C1E0, symSize: 0x0 }
+  - { offset: 0x673, size: 0x8, addend: 0x0, symName: _latency_scrambling.3, symObjAddr: 0x43FC, symBinAddr: 0x10000C1E4, symSize: 0x0 }
+  - { offset: 0x68A, size: 0x8, addend: 0x0, symName: _latency_encrypt.2, symObjAddr: 0x4400, symBinAddr: 0x10000C1E8, symSize: 0x0 }
+  - { offset: 0x6A1, size: 0x8, addend: 0x0, symName: _latency_memory_access.1, symObjAddr: 0x4404, symBinAddr: 0x10000C1EC, symSize: 0x0 }
+  - { offset: 0x6B8, size: 0x8, addend: 0x0, symName: _seed.0, symObjAddr: 0x4408, symBinAddr: 0x10000C1F0, symSize: 0x0 }
+  - { offset: 0x756, size: 0x8, addend: 0x0, symName: _validate_and_open_read, symObjAddr: 0xDC4, symBinAddr: 0x100006F7C, symSize: 0xA0 }
+  - { offset: 0x7A7, size: 0x8, addend: 0x0, symName: _parse_requests, symObjAddr: 0x920, symBinAddr: 0x100006AD8, symSize: 0x4A4 }
+  - { offset: 0x8C0, size: 0x8, addend: 0x0, symName: _split_next_line, symObjAddr: 0x67C, symBinAddr: 0x100006834, symSize: 0x2A4 }
+  - { offset: 0x988, size: 0x8, addend: 0x0, symName: _extract_arg, symObjAddr: 0x58C, symBinAddr: 0x100006744, symSize: 0xF0 }
+  - { offset: 0x9E3, size: 0x8, addend: 0x0, symName: _parse_uint8, symObjAddr: 0x4F4, symBinAddr: 0x1000066AC, symSize: 0x98 }
+  - { offset: 0xA2F, size: 0x8, addend: 0x0, symName: _parse_uint32, symObjAddr: 0x408, symBinAddr: 0x1000065C0, symSize: 0xEC }
+  - { offset: 0xA7B, size: 0x8, addend: 0x0, symName: _parse_cli, symObjAddr: 0xA0, symBinAddr: 0x100006258, symSize: 0x368 }
+  - { offset: 0xB33, size: 0x8, addend: 0x0, symName: _long_options.8, symObjAddr: 0x1A38, symBinAddr: 0x10000C0A8, symSize: 0x0 }
+  - { offset: 0xB65, size: 0x8, addend: 0x0, symName: _print_help, symObjAddr: 0x4C, symBinAddr: 0x100006204, symSize: 0x54 }
+  - { offset: 0xB8F, size: 0x8, addend: 0x0, symName: _print_usage, symObjAddr: 0x0, symBinAddr: 0x1000061B8, symSize: 0x4C }
+...

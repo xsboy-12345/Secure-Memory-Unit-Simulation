@@ -1,0 +1,22 @@
+# all files in the repository
+*
+
+# keep gitignore file
+!/.gitignore
+
+# keep project root scripts and documentation
+!/README.md
+!/build.sh
+!/Makefile
+
+# keep include directory and all its contents
+!/include/
+!/include/**
+
+# keep src directory and all its contents
+!/src/
+!/src/**
+
+# keep test directory and all its contents
+!/test/
+!/test/**
