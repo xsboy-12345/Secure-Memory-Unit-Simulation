@@ -78,12 +78,17 @@ struct Result run_simulation(
             r.write(true);  
             w.write(false);
             addr.write(requests[i].addr);
-        } else {                              
+        } else if(requests[i].w) {
             w.write(true);  
             r.write(false);
             wdata.write(requests[i].data);
             addr.write(requests[i].addr);
-        }
+        } else{
+           r.write(false);
+           w.write(false);
+           addr.write(0);
+           wdata.write(0);
+       }
         sc_start(1, SC_NS); 
         cyc_count++;
         while (!ready.read() && cyc_count < max_cycles){

@@ -2,7 +2,7 @@
 #include "include/SecureMemoryUnit_debug.hpp"
 
 int main() {
-    Request reqs[11];
+    Request reqs[12];
 
     reqs[0].addr = 0x20;
     reqs[0].data = 0xDEADBEEF;
@@ -78,8 +78,15 @@ int main() {
     reqs[10].data = 0;
     reqs[10].r = 0;
     reqs[10].w = 0;
-    reqs[10].fault = 0x50;
+    reqs[10].fault = 0x5DE4A423;
     reqs[10].faultBit = 8;
+
+    reqs[11].addr = 0x50;
+    reqs[11].data = 0;
+    reqs[11].r = 1;
+    reqs[11].w = 0;
+    reqs[11].fault = UINT32_MAX;
+    reqs[11].faultBit = 0;
 
     uint32_t test_key = 0xCAFEBABE;
     Result result = run_simulation(
@@ -90,7 +97,7 @@ int main() {
             1,               // latency_encryption
             1,               // latency_memory_access
             test_key,        // seed
-            11,              // numRequests
+            12,              // numRequests
             reqs
     );
 
