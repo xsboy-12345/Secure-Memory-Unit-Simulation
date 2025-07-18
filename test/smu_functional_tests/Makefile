@@ -2,7 +2,7 @@
 # CONFIGURATION BEGIN
 # ---------------------------------------
 
-TEST_SRCS = read_write_tests.cpp fault_injection_tests.cpp simulation_tests.cpp
+TEST_SRCS = read_write_tests.cpp fault_injection_tests.cpp component_parameter_sanity_tests.cpp
 TEST_BINS = $(TEST_SRCS:.cpp=)
 
 SCPATH := $(HOME)/systemc-2.3.3-install
