@@ -94,7 +94,9 @@ struct Result run_simulation(
 
         if (error.read()){
             err_count++;
+            cout << "!! Error detected in request " << i + 1 << std::endl;
         }
+        cout << "Cumulative errors after request " << i + 1 << ": " << err_count << std::endl;
         //for debugging
         if(w.read()){
             cout << "Write to address: " <<  addr.read() 

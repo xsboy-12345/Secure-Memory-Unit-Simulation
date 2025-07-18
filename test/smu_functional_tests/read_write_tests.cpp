@@ -3,6 +3,7 @@
 
 int main() {
     // Set up the request manually
+    Request reqs[20];
     uint32_t test_data[10] = {
             0x00000000,    // Minimum
             0xFFFFFFFF,    // Maximum
@@ -18,7 +19,8 @@ int main() {
     uint32_t test_addr[10] = {
             0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70, 0x80, 0x90, 0xA0
     };
-// Write-Read pairs
+
+
     for (int i = 0; i < 10; ++i) {
         // Write request
         reqs[2*i].addr = test_addr[i];
@@ -42,7 +44,7 @@ int main() {
 
     Result result = run_simulation(
             10000,           // max_cycles
-            "tb_trace.vcd",  // tracefile
+            "r&w_trace",  // tracefile
             0,               // endianness
             1,               // latency_scrambling
             1,               // latency_encryption
@@ -51,7 +53,6 @@ int main() {
             20,              // numRequests
             reqs
     );
-
 
     std::cout << "Testbench Simulation completed.\n";
     std::cout << "Cycles: " << result.cycles << std::endl;

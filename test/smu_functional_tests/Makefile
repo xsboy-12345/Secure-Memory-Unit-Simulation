@@ -2,13 +2,10 @@
 # CONFIGURATION BEGIN
 # ---------------------------------------
 
-CPP_SRCS = read_write_tests.cpp simulation_tests.cpp
-CPP_OBJS = $(CPP_SRCS:.cpp=.o)
-
-TARGET := read_write_tests
+TEST_SRCS = read_write_tests.cpp fault_injection_tests.cpp simulation_tests.cpp
+TEST_BINS = $(TEST_SRCS:.cpp=)
 
 SCPATH := $(HOME)/systemc-2.3.3-install
-
 CXX := clang++
 CXXFLAGS := -std=c++11 -Iinclude -I$(SCPATH)/include
 LDFLAGS := -L$(SCPATH)/lib -lsystemc -lm
@@ -21,21 +18,13 @@ endif
 # CONFIGURATION END
 # ---------------------------------------
 
-all: debug
+all: $(TEST_BINS)
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-debug: CXXFLAGS += -g
-debug: $(TARGET)
-
-release: CXXFLAGS += -O2
-release: $(TARGET)
-
-$(TARGET): $(CPP_OBJS)
-	$(CXX) $(CXXFLAGS) $(CPP_OBJS) $(LDFLAGS) -o $@
+# pattern rule: %.cpp -> %
+%: %.cpp simulation_tests.cpp
+	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
 
 clean:
-	rm -f $(TARGET) $(CPP_OBJS)
+	rm -f $(TEST_BINS) *.o
 
-.PHONY: all debug release clean
+.PHONY: all clean
