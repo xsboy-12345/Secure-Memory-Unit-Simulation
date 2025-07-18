@@ -22,7 +22,7 @@ int main() {
     reqs[2].data = 0;
     reqs[2].r = 0;
     reqs[2].w = 0;
-    reqs[2].fault = 0x20;
+    reqs[2].fault = 0x5DE4A452;
     reqs[2].faultBit = 2;
 
     reqs[3].addr = 0x20;
@@ -36,7 +36,7 @@ int main() {
     reqs[4].data = 0x12345678;
     reqs[4].r = 0;
     reqs[4].w = 1;
-    reqs[4].fault = 0x30;
+    reqs[4].fault = 0x5DE4A441;
     reqs[4].faultBit = 3;
 
     reqs[5].addr = 0x30;
@@ -57,7 +57,7 @@ int main() {
     reqs[7].data = 0;
     reqs[7].r = 1;
     reqs[7].w = 0;
-    reqs[7].fault = 0x40;
+    reqs[7].fault = 0x5DE4A432;
     reqs[7].faultBit = 2;
 
     reqs[8].addr = 0x50;
