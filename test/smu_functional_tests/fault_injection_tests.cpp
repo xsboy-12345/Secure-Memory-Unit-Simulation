@@ -2,7 +2,7 @@
 #include "include/SecureMemoryUnit_debug.hpp"
 
 int main() {
-    Request reqs[12];
+    Request reqs[13];
 
     reqs[0].addr = 0x20;
     reqs[0].data = 0xDEADBEEF;
@@ -36,57 +36,64 @@ int main() {
     reqs[4].data = 0x12345678;
     reqs[4].r = 0;
     reqs[4].w = 1;
-    reqs[4].fault = 0x5DE4A441;
+    reqs[4].fault = UINT32_MAX;
     reqs[4].faultBit = 3;
 
-    reqs[5].addr = 0x30;
-    reqs[5].data = 0;
-    reqs[5].r = 1;
-    reqs[5].w = 0;
-    reqs[5].fault = UINT32_MAX;
-    reqs[5].faultBit = 0;
+    reqs[5].addr = 0x100;
+    reqs[5].data = 0x56781234;
+    reqs[5].r = 0;
+    reqs[5].w = 1;
+    reqs[5].fault = 0x5DE4A441;
+    reqs[5].faultBit = 3;
 
-    reqs[6].addr = 0x40;
-    reqs[6].data = 0x23456789;
-    reqs[6].r = 0;
-    reqs[6].w = 1;
+    reqs[6].addr = 0x30;
+    reqs[6].data = 0;
+    reqs[6].r = 1;
+    reqs[6].w = 0;
     reqs[6].fault = UINT32_MAX;
     reqs[6].faultBit = 0;
 
     reqs[7].addr = 0x40;
-    reqs[7].data = 0;
-    reqs[7].r = 1;
-    reqs[7].w = 0;
-    reqs[7].fault = 0x5DE4A432;
-    reqs[7].faultBit = 2;
+    reqs[7].data = 0x23456789;
+    reqs[7].r = 0;
+    reqs[7].w = 1;
+    reqs[7].fault = UINT32_MAX;
+    reqs[7].faultBit = 0;
 
-    reqs[8].addr = 0x50;
-    reqs[8].data = 0x34567890;
-    reqs[8].r = 0;
-    reqs[8].w = 1;
-    reqs[8].fault = UINT32_MAX;
-    reqs[8].faultBit = 0;
+    reqs[8].addr = 0x40;
+    reqs[8].data = 0;
+    reqs[8].r = 1;
+    reqs[8].w = 0;
+    reqs[8].fault = 0x5DE4A432;
+    reqs[8].faultBit = 2;
 
     reqs[9].addr = 0x50;
-    reqs[9].data = 0;
-    reqs[9].r = 1;
-    reqs[9].w = 0;
+    reqs[9].data = 0x34567890;
+    reqs[9].r = 0;
+    reqs[9].w = 1;
     reqs[9].fault = UINT32_MAX;
     reqs[9].faultBit = 0;
 
-    reqs[10].addr = 0;
+    reqs[10].addr = 0x50;
     reqs[10].data = 0;
-    reqs[10].r = 0;
+    reqs[10].r = 1;
     reqs[10].w = 0;
-    reqs[10].fault = 0x5DE4A423;
-    reqs[10].faultBit = 8;
+    reqs[10].fault = UINT32_MAX;
+    reqs[10].faultBit = 0;
 
-    reqs[11].addr = 0x50;
+    reqs[11].addr = 0;
     reqs[11].data = 0;
-    reqs[11].r = 1;
+    reqs[11].r = 0;
     reqs[11].w = 0;
-    reqs[11].fault = UINT32_MAX;
-    reqs[11].faultBit = 0;
+    reqs[11].fault = 0x5DE4A423;
+    reqs[11].faultBit = 8;
+
+    reqs[12].addr = 0x50;
+    reqs[12].data = 0;
+    reqs[12].r = 1;
+    reqs[12].w = 0;
+    reqs[12].fault = UINT32_MAX;
+    reqs[12].faultBit = 0;
 
     uint32_t test_key = 0xCAFEBABE;
     Result result = run_simulation(
@@ -97,7 +104,7 @@ int main() {
             1,               // latency_encryption
             1,               // latency_memory_access
             test_key,        // seed
-            12,              // numRequests
+            13,              // numRequests
             reqs
     );
 
